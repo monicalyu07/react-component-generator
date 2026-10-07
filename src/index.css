@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --background: #edeaf3;
+  --foreground: #26244f;
+}
+
+body {
+  font-family: 'Gowun Batang', 'Nanum Myeongjo', 'Batang', ui-serif, Georgia, serif;
+  line-height: 1.75;
+  /* 에어브러시로 칠한 듯한 새벽빛이 위에서 아래로 안개처럼 풀린다 */
+  background:
+    linear-gradient(
+      180deg,
+      #f1d9d6 0,
+      #e8dfee 420px,
+      var(--background) 900px
+    )
+    var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+/* 음반 커버 인쇄물 같은 미세한 입자 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.3  0 0 0 0 0.28  0 0 0 0 0.45  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
