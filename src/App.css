@@ -807,3 +807,25 @@ button:focus-visible {
     animation: none;
   }
 }
+
+.prompt-meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.prompt-counter {
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.prompt-counter.is-over,
+.prompt-error {
+  color: var(--danger);
+}
+
+.prompt-textarea[aria-invalid='true'] {
+  border-color: var(--danger);
+}
